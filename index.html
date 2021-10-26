@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Link FAVICON-->
+    <link rel="icon" type="image/x-icon" href="resource/favicon.ico" />
+
+    <!-- Link FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Link STYLESHEET (CSS) -->
+    <link rel="stylesheet" href="css\style.css">
+
+    <title>BookShelter</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="text-normal" href="#">
+                <div class="nav-brand">
+                    <img src="resource/open-book-white.svg" alt="">
+                    BOOKSHELTER
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <ul>
+                        <li class="nav-item"><a class="text-normal" href="#">HOME</a></li>
+                        <li class="nav-item"><a class="text-normal" href="#form-input">FORM</a></li>
+                        <li class="nav-item"><a class="text-normal" href="#book">UNREAD</a></li>
+                        <li class="nav-item"><a class="text-normal" href="#read-book">READ</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-menu-mobile" onclick="navMobile()">
+                    <img src="resource/nav-mobile.png" alt="">
+                </div>
+            </a>
+        </nav>
+
+        <div id="darken">
+            <div id="nav-list-mobile">
+                <div class="nav-list-mobile-close" onclick="navMobileClose()">
+                    <img src="resource/nav-mobile-close.png" alt="">
+                </div>
+                <ul>
+                    <li class="nav-item"><a class="text-normal" href="#">HOME</a></li>
+                    <li class="nav-item"><a class="text-normal" href="#form-input">FORM</a></li>
+                    <li class="nav-item"><a class="text-normal" href="#book">READ</a></li>
+                    <li class="nav-item"><a class="text-normal" href="#read-book">UNREAD</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <div class="tagline">
+                <div class="tagline-header">Website for Book Lover who wants to cherish their reads.</div>
+            </div>
+            <button type="button" class="btn-xl btn-primary">
+                <a class="text-normal" href="#form-input">ADD NEW BOOK</a>
+            </button>
+        </div>
+    </header>
+    <main>
+        <div id="content">
+            <article id="form-input">
+                <div class="article-header-dark mb-3">
+                    Book Input Form
+                </div>
+                <form action="#">
+                    <div class="form-group">
+                        <label for="book-title">Book Title</label>
+                        <input type="text" name="book-title" id="book-title">
+                    </div>
+                    <div class="form-group">
+                        <label for="book-author">Book Author</label>
+                        <input type="text" name="book-author" id="book-author">
+                    </div>
+                    <div class="form-group">
+                        <label for="book-year">Year Published</label>
+                        <input type="text" name="book-year" id="book-year">
+                    </div>
+                    <div class="form-group-read">
+                        <label for="book-read">Read</label>
+                        <input type="checkbox" name="book-read" id="book-read">
+                    </div>
+                    <div class="form-group-submit">
+                        <button type="button" class="btn-xl btn-book" id="book-submit" onclick="submitData()"> Submit </button>
+                    </div>
+                </form>
+            </article>
+
+            <article id="book">
+                <div class="article-header-dark mb-3">
+                    Unread Book(s)
+                </div>
+                <section id="book-display">
+                    <!--Filled by JS-->
+                </section>
+            </article>
+
+            <article id="read-book">
+                <div class="article-header-dark mb-3">
+                    Read Book(s)
+                </div>
+                <section id="read-book-display">
+                    <!--Filled by JS-->
+                </section>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <p>COPYRIGHT&copy 2021 BOOKSHELTER -- ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <div id="darken-modal"></div>
+
+    <div class="modal modal-center" id="modal-fill">
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
